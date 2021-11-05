@@ -1,0 +1,26 @@
+.header {
+  color: pink;
+  text-align: center;
+  font-size: 45px;
+}
+
+.name-gallery {
+  border: 5px;
+  border-radius: 10px;
+  border-color: rgb(0, 174, 255) rgb(0, 174, 255) pink pink;
+  border-style: solid;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+}
+
+.f-name {
+  border-radius: 2px;
+  background-color: pink;
+}
+
+.m-name {
+  border-radius: 2px;
+  background-color: rgb(0, 174, 255);
+}
