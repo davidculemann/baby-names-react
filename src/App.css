@@ -5,14 +5,15 @@
 }
 
 .name-gallery {
+  padding: 5px;
   border: 5px;
   border-radius: 10px;
   border-color: rgb(0, 174, 255) rgb(0, 174, 255) pink pink;
   border-style: solid;
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 3px;
+  align-content: center;
 }
 
 .f-name {
