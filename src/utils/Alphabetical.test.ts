@@ -1,4 +1,4 @@
-import { Alphabetical } from "./alphabeticalOrder";
+import { Alphabetical } from "./Alphabetical";
 
 test("greet returns a string, greeting the passed name", () => {
   expect(
