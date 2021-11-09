@@ -1,15 +1,29 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+  color: #666;
+  background: #f6f6f6;
+}
+
 .header {
   color: pink;
   text-align: center;
   font-size: 45px;
 }
 
-.search-bar {
+.search {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.input-bar {
+  height: 25px;
+  font-size: 16px;
 }
 
 .name-gallery,
@@ -25,19 +39,54 @@
   padding: 5px;
   border: 5px;
   border-radius: 10px;
-  border-color: rgb(0, 174, 255) rgb(0, 174, 255) pink pink;
+  border-color: pink rgb(0, 174, 255) rgb(0, 174, 255) pink;
   border-style: solid;
 }
 
 .f-name {
+  padding-left: 3px;
+  padding-right: 3px;
   border-radius: 2px;
   background-color: pink;
+  color: rgb(153, 35, 108);
 }
 
 .m-name {
-  padding: 1px 1px 1px 1px;
+  padding-left: 3px;
+  padding-right: 3px;
   border-radius: 2px;
-  background-color: rgb(0, 174, 255);
+  background-color: rgb(110, 206, 250);
+  color: rgb(2, 61, 88);
+}
+
+.gender-male {
+  width: 40px;
+  height: 29px;
+  background-color: rgb(110, 206, 250);
+  font-size: 20px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.gender-female {
+  width: 40px;
+  height: 29px;
+  background-color: pink;
+  font-size: 20px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.gender-all {
+  width: 40px;
+  height: 29px;
+  background-color: rgba(98, 98, 102, 0.308);
+  font-size: 11px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
 }
 
 .App {
