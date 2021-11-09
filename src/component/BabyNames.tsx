@@ -1,5 +1,5 @@
 import { Alphabetical } from "../utils/Alphabetical";
-import { searchFilter } from "../utils/searchFilter";
+import { NamesFilter } from "../utils/NamesFilter";
 import { useState } from "react";
 
 interface IName {
@@ -10,19 +10,45 @@ interface IName {
 
 export function BabyNames(names: IName[]): JSX.Element {
   const [search, setSearch] = useState("");
-  const namesToShow = names.filter((babyname) =>
-    searchFilter(babyname, search)
+  const [favourites, setFavourites] = useState<IName[]>([]);
+  const namesToShow: IName[] = NamesFilter(names, search).filter(
+    (baby) => !favourites.includes(baby)
   );
+
+  function handleSetFavourite(newFavourite: IName) {
+    if (!favourites.includes(newFavourite)) {
+      setFavourites([...favourites, newFavourite]);
+    } else {
+      setFavourites(
+        favourites.filter((fave) => fave.name !== newFavourite.name)
+      );
+    }
+  }
 
   return (
     <div className="baby-names">
       {/* Search bar */}
       <div className="search-bar">
         <input
+          type="text"
           placeholder="search..."
-          onChange={(e) => setSearch(e.target.value)}
           value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
+      <div className="favourites">
+        Favourites:
+        {Alphabetical(favourites).map((baby) =>
+          baby.sex === "f" ? (
+            <div className="f-name" onClick={() => handleSetFavourite(baby)}>
+              {baby.name}
+            </div>
+          ) : (
+            <div className="m-name" onClick={() => handleSetFavourite(baby)}>
+              {baby.name}
+            </div>
+          )
+        )}
       </div>
       <hr />
 
@@ -30,25 +56,16 @@ export function BabyNames(names: IName[]): JSX.Element {
       <div className="name-gallery">
         {Alphabetical(namesToShow).map((baby) =>
           baby.sex === "f" ? (
-            <div className="f-name">{baby.name}</div>
+            <div className="f-name" onClick={() => handleSetFavourite(baby)}>
+              {baby.name}
+            </div>
           ) : (
-            <div className="m-name">{baby.name}</div>
+            <div className="m-name" onClick={() => handleSetFavourite(baby)}>
+              {baby.name}
+            </div>
           )
         )}
       </div>
     </div>
   );
 }
-
-// function AlphabeticalSort(names: IName[]) {
-//   return (
-//     <div>
-//       {names.map((baby) =>
-//         baby.sex === "f" ?
-//           (<div className="f-name">{baby.name}</div>)
-//           :
-//           (<div className="m-name">{baby.name}</div>)
-//       )}
-//     </div>
-//   )
-// }

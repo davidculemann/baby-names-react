@@ -12,7 +12,8 @@
   align-items: center;
 }
 
-.name-gallery {
+.name-gallery,
+.favourites {
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -34,11 +35,13 @@
 }
 
 .m-name {
+  padding: 1px 1px 1px 1px;
   border-radius: 2px;
   background-color: rgb(0, 174, 255);
 }
 
 .App {
+  padding: 5px;
   max-width: 1000px;
   margin: 0 auto;
 }
