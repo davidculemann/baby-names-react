@@ -8,7 +8,7 @@ html {
 }
 
 .header {
-  color: pink;
+  color: black;
   text-align: center;
   font-size: 45px;
 }
@@ -39,8 +39,7 @@ html {
   padding: 5px;
   border: 5px;
   border-radius: 10px;
-  border-color: rgb(247, 196, 204) rgb(0, 174, 255) rgb(0, 174, 255)
-    rgb(247, 196, 204);
+  border-color: #d4855a #6c4e97 #6c4e97 #d4855a;
   border-style: solid;
 }
 
@@ -48,39 +47,45 @@ html {
   padding-left: 3px;
   padding-right: 3px;
   border-radius: 2px;
-  background-color: rgb(247, 196, 204);
-  color: rgb(153, 35, 108);
+  background-color: #d4855a;
+  color: rgb(51, 4, 4);
+  cursor: pointer;
 }
 
 .m-name {
   padding-left: 3px;
   padding-right: 3px;
   border-radius: 2px;
-  background-color: rgb(110, 206, 250);
-  color: rgb(2, 61, 88);
+  background-color: #6c4e97;
+  color: rgb(203, 230, 243);
+  cursor: pointer;
 }
 
-.gender-male {
+.gender-male-off {
   width: 40px;
   height: 29px;
-  background-color: rgb(110, 206, 250);
+  background-color: #6c4e97;
   font-size: 20px;
   color: rgb(2, 61, 88);
   border-width: 1px;
   border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 1.5px black;
 }
 
-.gender-female {
+.gender-female-off {
   width: 40px;
   height: 29px;
-  background-color: rgb(247, 196, 204);
+  background-color: #d4855a;
   font-size: 20px;
   color: rgb(2, 61, 88);
   border-width: 1px;
   border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 1.5px black;
 }
 
-.gender-all {
+.gender-all-off {
   width: 40px;
   height: 29px;
   background-color: rgba(98, 98, 102, 0.308);
@@ -88,6 +93,49 @@ html {
   color: rgb(2, 61, 88);
   border-width: 1px;
   border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 1.5px black;
+}
+
+.gender-male-on {
+  width: 40px;
+  height: 29px;
+  background-color: #6c4e97;
+  font-size: 20px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  border-color: chartreuse;
+  border-color: chartreuse;
+}
+
+.gender-female-on {
+  width: 40px;
+  height: 29px;
+  background-color: #d4855a;
+  font-size: 20px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  border-color: chartreuse;
+}
+
+.gender-all-on {
+  width: 40px;
+  height: 29px;
+  background-color: rgba(98, 98, 102, 0.308);
+  font-size: 20px;
+  color: rgb(2, 61, 88);
+  border-width: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  border-color: chartreuse;
+}
+
+.gender-all-on:active {
+  background-color: brown;
 }
 
 .App {

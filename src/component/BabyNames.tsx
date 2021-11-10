@@ -23,21 +23,24 @@ export function BabyNames(names: IName[]): JSX.Element {
     .filter((baby) => baby.sex === gender || gender === "all");
 
   const [play] = useSound(babySound);
-  const [play2] = useSound(deselect);
-  const [play3] = useSound(select);
+  const [deselectSound] = useSound(deselect);
+  const [selectSound] = useSound(select);
 
   function handleSetFavourite(newFavourite: IName) {
     if (!favourites.includes(newFavourite)) {
       setFavourites([...favourites, newFavourite]);
+      selectSound();
     } else {
       setFavourites(
         favourites.filter((fave) => fave.name !== newFavourite.name)
       );
+      deselectSound();
     }
   }
 
   function handleSetGender(newGender: string) {
     setGender(newGender);
+    play();
   }
 
   return (
@@ -53,21 +56,26 @@ export function BabyNames(names: IName[]): JSX.Element {
         />
         {/* Buttons to filter for gender */}
         &nbsp;
-        <button className="gender-all" onClick={() => handleSetGender("all")}>
+        <button
+          className={gender === "all" ? "gender-all-on" : "gender-all-off"}
+          onClick={() => handleSetGender("all")}
+        >
           ⚥
         </button>
         &nbsp;
-        <button className="gender-female" onClick={() => handleSetGender("f")}>
+        <button
+          className={gender === "f" ? "gender-female-on" : "gender-female-off"}
+          onClick={() => handleSetGender("f")}
+        >
           ♀
         </button>
         &nbsp;
-        <button className="gender-male" onClick={() => handleSetGender("m")}>
+        <button
+          className={gender === "m" ? "gender-male-on" : "gender-male-off"}
+          onClick={() => handleSetGender("m")}
+        >
           ♂️
         </button>
-        {/* Testing useSound */}
-        <button onClick={() => play}>Sound test</button>
-        <button onClick={() => play2}>Sound test2</button>
-        <button onClick={() => play3}>Sound test3</button>
       </div>
 
       {/* List of favourites name selected by the user  */}
