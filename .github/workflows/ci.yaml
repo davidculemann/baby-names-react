@@ -21,7 +21,9 @@ jobs:
         run: yarn type-check
       - name: Check tests pass
         run: yarn test
+      - name: Start
+        run: yarn start & wait-on http://localhost:3000
       - name: Check cypress tests pass
-        run: yarn test-cypress-live
+        run: yarn test-cypress-local
       - name: Check app builds
         run: yarn build
