@@ -18,6 +18,8 @@
     "type-check": "tsc --noEmit",
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
+    "test-cypress-local": "cypress open",
+    "test-cypress-live": "cypress open --config-file ./cypress.staging.json",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
@@ -34,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -43,6 +46,7 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
+    "cypress": "^9.2.1",
     "eslint": "^7.28.0",
     "eslint-plugin-react": "^7.24.0",
     "prettier": "2.3.1"
